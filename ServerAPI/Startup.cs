@@ -37,9 +37,9 @@ namespace ServerAPI
             {
                 var logger = sp.GetRequiredService<ILogger<DefaultServiceBusPersisterConnection>>();
 
-                var serviceBusConnectionString = "[your con string]";
+                var serviceBusConnectionString = "Endpoint=sb://notiphy-sbus-ns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=TFhtQJiIeVjBpX49byX22fT/x1/0pOfa+5nm4NPxNNc=";
                 var serviceBusConnection = new ServiceBusConnectionStringBuilder(serviceBusConnectionString);
-                serviceBusConnection.EntityPath = "[your topic name]";
+                serviceBusConnection.EntityPath = "mytopic";
 
                 return new DefaultServiceBusPersisterConnection(serviceBusConnection, logger);
             });
